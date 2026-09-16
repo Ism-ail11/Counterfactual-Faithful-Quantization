@@ -1,6 +1,6 @@
 # Counterfactual-Faithful Quantization (CFQ)
 
-A clean PyTorch reference implementation for the paper **“When Bits Break Recourse: Counterfactual-Faithful Quantization.”** The repository implements the method, metrics, actionable projections, quantizers, mixed-precision allocation, post-training variant, baselines, and experiment families described in the main text and appendix.
+A clean PyTorch reference implementation for the paper **“When Bits Break Recourse: Counterfactual-Faithful Quantization.”** The repository implements the method, metrics, actionable projections, quantizers, mixed-precision allocation, post-training variant, baselines, and experiment families described in the main text and appendix
 
 
 ## Implemented components
