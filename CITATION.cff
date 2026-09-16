@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "CFQ: Counterfactual-Faithful Quantization"
+message: "Please cite the accompanying paper when using this software."
+type: software
+authors:
+  - family-names: Yahyati
+    given-names: Chaymae
+  - family-names: Lamaakal
+    given-names: Ismail
+  - family-names: El Makkaoui
+    given-names: Khalid
+  - family-names: Ouahbi
+    given-names: Ibrahim
+version: 0.1.0
+date-released: 2026-07-26
+license: Apache-2.0

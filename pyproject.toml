@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cfq-repro"
+version = "0.1.0"
+description = "Reproducible reference implementation of Counterfactual-Faithful Quantization"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+  {name = "Chaymae Yahyati"},
+  {name = "Ismail Lamaakal"},
+  {name = "Khalid El Makkaoui"},
+  {name = "Ibrahim Ouahbi"}
+]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "scikit-learn>=1.4",
+  "joblib>=1.3",
+  "scipy>=1.11",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "PyYAML>=6.0",
+  "tqdm>=4.66",
+  "matplotlib>=3.8"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+cfq = "cfq.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cfq*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F", "E9"]

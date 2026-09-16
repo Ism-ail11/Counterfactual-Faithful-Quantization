@@ -1,0 +1,44 @@
+dataset: synthetic
+method: cfq
+output_dir: results/run
+model:
+  backbone: mlp
+  hidden_dims: [128, 64]
+  dropout: 0.0
+  num_classes: 2
+recourse:
+  train_steps: 3
+  eval_steps: 80
+  train_step_size: 0.08
+  eval_step_size: 0.04
+  train_restarts: 1
+  eval_restarts: 3
+  cost_kind: l1
+  cost_weight: 0.02
+  mixed_l1: 0.5
+  mixed_l2: 0.5
+  margin: 0.0
+  support_threshold: 0.0001
+quant:
+  bits: [2, 3, 4, 8]
+  uniform_bit: 4
+  mixed_precision: true
+  temperature_start: 5.0
+  temperature_end: 0.25
+  target_avg_bits: 4.0
+  budget_tolerance: 0.05
+  quantize_activations: true
+train:
+  epochs_fp: 30
+  epochs_qat: 20
+  batch_size: 256
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  eta: 1.0
+  bit_lambda: 0.01
+  hinge_beta: 0.0
+  hinge_gamma: 0.25
+  match_alpha1: 0.0
+  match_alpha2: 0.0
+  early_stopping_patience: 8
+  seed: 42

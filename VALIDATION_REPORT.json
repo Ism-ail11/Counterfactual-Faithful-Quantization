@@ -1,0 +1,172 @@
+{
+  "source_repository": "https://github.com/Ism-ail11/When-Bits-Break-Recourse-Counterfactual-Faithful-Quantization",
+  "source_commit": "aa2b85ca05cff4cdbc54bf4c5f66cedc21587de2",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.14.0+cpu",
+      "torchvision": "0.29.0+cpu",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0",
+      "joblib": "1.5.3",
+      "PyYAML": "6.0.3",
+      "pytest": "9.1.1",
+      "ruff": "0.16.7"
+    }
+  },
+  "unit_and_integration_tests": {
+    "tests": 58,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python -m pytest",
+  "static_checks": {
+    "ruff": "passed",
+    "compileall": "passed",
+    "git_diff_whitespace_check": "passed"
+  },
+  "package_checks": {
+    "editable_install": "passed",
+    "wheel_build": "passed",
+    "pip_check": "passed",
+    "installed_cfq_smoke_from_outside_project": "passed"
+  },
+  "synthetic_script_checks": [
+    {
+      "entrypoint": "main",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "cfptq",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "baselines",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "backbones",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "budget",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "runtime",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "stress",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "theory",
+      "returncode": 0
+    },
+    {
+      "entrypoint": "fast",
+      "returncode": 0
+    }
+  ],
+  "script_check_settings": {
+    "config": "configs/fast.yaml",
+    "samples": 160,
+    "recourse_examples": 16,
+    "run_all_fast_samples": 600
+  },
+  "real_tabular_pipeline_checks": [
+    {
+      "dataset": "adult",
+      "status": "passed",
+      "method": "cfq",
+      "samples": 200,
+      "fp_epochs": 1,
+      "qat_epochs": 1,
+      "recourse_examples": 8,
+      "input_dim": 79,
+      "immutable_features": 20,
+      "ordinal_features": 0,
+      "positive_rate": 0.23893804848194122
+    },
+    {
+      "dataset": "german",
+      "status": "passed",
+      "method": "cfq",
+      "samples": 200,
+      "fp_epochs": 1,
+      "qat_epochs": 1,
+      "recourse_examples": 8,
+      "input_dim": 61,
+      "immutable_features": 7,
+      "ordinal_features": 0,
+      "positive_rate": 0.6974790096282959
+    },
+    {
+      "dataset": "bank",
+      "status": "passed",
+      "method": "cfq",
+      "samples": 200,
+      "fp_epochs": 1,
+      "qat_epochs": 1,
+      "recourse_examples": 8,
+      "input_dim": 49,
+      "immutable_features": 1,
+      "ordinal_features": 0,
+      "positive_rate": 0.1111111119389534
+    },
+    {
+      "dataset": "default",
+      "status": "passed",
+      "method": "cfq",
+      "samples": 200,
+      "fp_epochs": 1,
+      "qat_epochs": 1,
+      "recourse_examples": 8,
+      "input_dim": 30,
+      "immutable_features": 2,
+      "ordinal_features": 6,
+      "positive_rate": 0.779411792755127
+    },
+    {
+      "dataset": "compas",
+      "status": "passed",
+      "method": "cfq",
+      "samples": 200,
+      "fp_epochs": 1,
+      "qat_epochs": 1,
+      "recourse_examples": 8,
+      "input_dim": 14,
+      "immutable_features": 8,
+      "ordinal_features": 0,
+      "positive_rate": 0.5462185144424438
+    }
+  ],
+  "additional_real_check": {
+    "dataset": "german",
+    "method": "cfptq_sensitivity",
+    "samples": 100,
+    "status": "passed"
+  },
+  "image_pipeline_methods_tested": [
+    "fp32",
+    "ptq8",
+    "cfptq",
+    "lsq",
+    "cfq",
+    "prune_quant"
+  ],
+  "image_test_data": "Local 28x28 image fixtures; no MNIST/Fashion-MNIST downloads",
+  "not_executed": [
+    "CUDA",
+    "Windows",
+    "macOS",
+    "Docker",
+    "full paper-scale experiments",
+    "GitHub Actions remote run"
+  ]
+}

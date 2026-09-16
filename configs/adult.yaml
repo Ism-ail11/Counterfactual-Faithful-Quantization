@@ -1,0 +1,4 @@
+# Merge these values into base.yaml or pass them as CLI overrides.
+dataset: adult
+method: cfq
+output_dir: results/adult/cfq

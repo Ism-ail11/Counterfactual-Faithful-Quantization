@@ -1,0 +1,30 @@
+dataset: synthetic
+method: cfq
+output_dir: results/fast
+model:
+  backbone: mlp
+  hidden_dims: [32, 16]
+  num_classes: 2
+recourse:
+  train_steps: 1
+  eval_steps: 12
+  train_step_size: 0.1
+  eval_step_size: 0.08
+  train_restarts: 1
+  eval_restarts: 1
+  cost_kind: l1
+  cost_weight: 0.01
+quant:
+  bits: [2, 4, 8]
+  uniform_bit: 4
+  target_avg_bits: 4.0
+  quantize_activations: true
+train:
+  epochs_fp: 4
+  epochs_qat: 3
+  batch_size: 128
+  learning_rate: 0.001
+  eta: 1.0
+  bit_lambda: 0.01
+  early_stopping_patience: 3
+  seed: 42

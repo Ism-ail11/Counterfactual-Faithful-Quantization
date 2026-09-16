@@ -1,0 +1,6 @@
+# Merge these values into base.yaml or pass them as CLI overrides.
+dataset: default
+method: cfq
+output_dir: results/default/cfq
+recourse:
+  cost_kind: l2
