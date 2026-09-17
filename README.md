@@ -25,8 +25,7 @@ A clean PyTorch reference implementation for the paper **“When Bits Break Reco
 ## Setup
 
 Use Python 3.10 or newer. The local verification for this corrected distribution
-used Python 3.12 on Linux with CPU PyTorch; see `REPAIR_REPORT.md` for the exact
-versions and scope.
+used Python 3.12 on Linux with CPU PyTorch.
 
 From the extracted project directory:
 
